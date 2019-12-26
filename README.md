@@ -3,6 +3,7 @@
 ### Tested environment 
 
 SO: Windows 10 Pro
+
 NodeJS: v10.14.2
 
 ### Run instructions
@@ -30,7 +31,7 @@ After the request was sent, you'll see the following result
 
 Markers with info
 
-![ss4](https://i.imgur.com/eVWxYAY.jpg)
+![ss4](https://i.imgur.com/HDmjoN7.jpg)
 
 
 ### Documentation
@@ -40,15 +41,23 @@ Markers with info
 A web API was developed under the following strategy. Using NodeJS and Express, a web API was built with some standards.
 * Versioning of the API. For example:
     > http://api/api/v1/endpoint
+    
     > http://api/api/v2/endpoint
+    
     > http://api/api/vn/endpoint
+    
 * CORS and Compression were enable
 * Routers: The API uses routers to handle routes of endpoints. Current structure:
     > (R) API
+    
     > --- (R) V1
+    
     > ------- (R) foodtrucks
+    
     > --------------------- / Get all food trucks
+    
     > --------------------- /near Get the n nearest food trucks from lat/lng
+    
 * Validations: The API uses Joi to check all parameters, body and data from the endpoint.
 * Logging: The API records all request over a file under res/log.log
 * MVC is used to handle all backend. Using the source CSV file as database. In case we use a real database is just required change the model method returning exactly the same data format.
@@ -64,7 +73,9 @@ In case that I had more time I would like to implement the followings:
 * Configure a little web app to see a dashboard of OpenAPI to see full documentation of the Web API endpoints, methods, requirements, input format, output format.
 * Documentation of code with ESDocs (implemented but not full documented) 
     > npm run docs
+    
     > go to docs/
+    
 * Using sonarqube to check code.
 * Better mechanism to build and deploy. Currently is manually, that means build the web react, copy the build, go to dist/view/ and paste there.
 
